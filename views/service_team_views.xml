@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- booking.serviceteam tree view -->
+    <record id="booking_serviceteam_view_tree" model="ir.ui.view">
+        <field name="name">Service Team - Tree</field>
+        <field name="model">booking.serviceteam</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="team_leader"/>
+                <field name="team_members"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- booking.serviceteam form view -->
+    <record id="booking_serviceteam_view_form" model="ir.ui.view">
+        <field name="name">Service Team - Form</field>
+        <field name="model">booking.serviceteam</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="team_leader"/>
+                        <field name="team_members"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- booking.serviceteam action window -->
+    <record id="booking_serviceteam_action" model="ir.actions.act_window">
+        <field name="name">Service Team - Action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">booking.serviceteam</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="service_team_menu_act" 
+        name="Service Team" 
+        parent="bo_menu_categ" 
+        action="booking_serviceteam_action" 
+        sequence="30"/>
+
+</odoo>

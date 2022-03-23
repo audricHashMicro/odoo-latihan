@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- booking.saleorder tree view -->
+    <record id="booking_saleorder_view_tree" model="ir.ui.view">
+        <field name="name">Sale Order - Tree</field>
+        <field name="model">booking.saleorder</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="is_booking_order"/>
+                <field name="team"/>
+                <field name="team_leader"/>
+                <field name="team_members"/>
+                <field name="booking_start"/>
+                <field name="booking_end"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- booking.saleorder form view -->
+    <record id="booking_saleorder_view_form" model="ir.ui.view">
+        <field name="name">Sale Order - Form</field>
+        <field name="model">booking.saleorder</field>
+        <field name="arch" type="xml">
+            <form string="">
+            <xpath expr="//tree" position="inside">
+                <header>
+                    <button string="Check" name="check" type="object" class="oe_highlight"/>
+                </header>
+            </xpath>
+
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="is_booking_order"/>
+                        <field name="team"/>
+                        <field name="team_leader"/>
+                        <field name="team_members"/>
+                        <field name="booking_start"/>
+                        <field name="booking_end"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- booking.saleorder action window -->
+    <record id="booking_saleorder_action" model="ir.actions.act_window">
+        <field name="name">Sale Order - Action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">booking.saleorder</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_booking_order', '=', 'True')]</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="sale_order_menu_act" 
+        name="Sale Order" 
+        parent="bo_menu_categ" 
+        action="booking_saleorder_action" 
+        sequence="10"/>
+
+</odoo>

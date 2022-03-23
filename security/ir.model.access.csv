@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_booking_serviceteam,access.booking.serviceteam,model_booking_serviceteam,,1,1,1,1
+access_booking_saleorder,access.booking.saleorder,model_booking_saleorder,,1,1,1,1
+access_booking_workorder,access.booking.workorder,model_booking_workorder,,1,1,1,1

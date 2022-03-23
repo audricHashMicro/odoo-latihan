@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="report_booking_workorder">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h1>Work Order Report</h1>
+                    <h3>
+                        <div class="row">
+                            <table class="table-bordered">
+                                    <tr>
+                                        <th colspan="4"><span t-field="o.name"/></th>
+                                    </tr>
+                                    <tr>
+                                        <th>Team Name</th>
+                                        <th><span t-esc="o.team"/></th>
+                                        <th>Customer</th>
+                                        <th>belum ada</th>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th>Booking Order Ref</th>
+                                        <th><span t-esc="o.bo_reference"/></th>
+                                        <td>Date</td>
+                                        <td><span t-esc="o.date_start"/>-<span t-esc="o.date_end"/></td>
+                                    </tr>                          
+                                
+                                    <tr>
+                                        <th colspan="4">
+                                            <p>NOTES:</p>
+                                            <p><span t-esc="o.notes"/></p>
+                                        </th>
+                                    </tr>
+
+                                    <tr>
+                                        <th colspan="4">
+                                            <p>Signature:</p>
+                                        </th>
+                                    </tr>
+                            </table>
+                        </div>
+                    </h3>
+                </div>
+            </t>
+        </t>
+    </t>    
+</template>    
+
+</odoo>
